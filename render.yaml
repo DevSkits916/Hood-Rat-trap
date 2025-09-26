@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: device-logger
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    healthCheckPath: "/healthz"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LOG_TO_FILE
+        value: "true"
+      - key: LOG_DIR
+        value: "/data/logs"
+      - key: IP_HASH_SALT
+        generateValue: true
+      - key: CONSENT_REQUIRED
+        value: "false"
+    disk:
+      name: device-logger-disk
+      mountPath: /data
+      sizeGB: 1
