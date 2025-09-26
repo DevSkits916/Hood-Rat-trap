@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visit Logger</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Visit Logger</h1>
+    <p>This page records a minimal set of visit details for diagnostics and abuse prevention.</p>
+    <div id="consent" class="consent hidden">
+      <p>This site can collect device basics (screen size, timezone, language) to improve reliability.</p>
+      <button id="agree">I agree</button>
+    </div>
+    <pre id="status">Loading…</pre>
+  </main>
+  <script src="/collect.js" defer></script>
+</body>
+</html>
